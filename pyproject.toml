@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "pythonproject4"
+version = "0.1.0"
+description = ""
+authors = ["saginesl <yana.barsukova.2003@mail.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+uvicorn = {extras = ["standart"], version = "^0.25.0"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
