@@ -69,14 +69,14 @@ async def read_user_task(id: int):
 
 # создание задачи пользователя
 @users_router.post("/{id}/Task")
-async def create_user_profile(id: int, task: Task):
+async def create_user_task(id: int, task: Task):
     task.id = id
     users_task.append(task)
     return task.dict()
 
 # изменение задачи пользователя
 @users_router.put("/{id}/Task")
-async def update_user_profile(id: int, task: Task):
+async def update_user_task(id: int, task: Task):
     for p in users_task:
         if p.id == id:
             p.id_user = task.id_user
@@ -87,7 +87,7 @@ async def update_user_profile(id: int, task: Task):
 
 # удаление задачи пользователя
 @users_router.delete("/{id}/Task")
-async def delete_user_profile(id: int):
+async def delete_user_task(id: int):
     for i, p in enumerate(users_task):
         if p.id == id:
             del users_task[i]
